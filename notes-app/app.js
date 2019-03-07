@@ -1,5 +1,14 @@
 const chalk = require('chalk')
-console.log(chalk.green.bold.inverse('green'))
+
+const command = process.argv[2]
+
+if (command === 'add') {
+  console.log('Adding note!')
+} else if (command === 'remove') {
+  console.log('Removing Note!')
+}
+
+// console.log(chalk.green.inverse('green'))
 
 // const validator = require('validator')
 // console.log(validator.isURL('https://berest.com'))
