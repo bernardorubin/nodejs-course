@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-console.log(chalk.green('green'))
+console.log(chalk.green.bold.inverse('green'))
 
 // const validator = require('validator')
 // console.log(validator.isURL('https://berest.com'))
