@@ -1,6 +1,8 @@
-const validator = require('validator')
+const chalk = require('chalk')
+console.log(chalk.green('green'))
 
-console.log(validator.isURL('https://berest.com'))
+// const validator = require('validator')
+// console.log(validator.isURL('https://berest.com'))
 
 // const getNotes = require('./notes.js')
 // console.log(getNotes())
