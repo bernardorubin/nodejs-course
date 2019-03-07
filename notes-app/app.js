@@ -1,6 +1,9 @@
-const getNotes = require('./notes.js')
+const validator = require('validator')
 
-console.log(getNotes())
+console.log(validator.isURL('https://berest.com'))
+
+// const getNotes = require('./notes.js')
+// console.log(getNotes())
 
 // const fs = require('fs')
 // fs.writeFileSync('notes.txt', 'This is the new text')
