@@ -1,11 +1,25 @@
-console.log('Starting')
+const request = require('request')
 
-setTimeout(() => {
-  console.log('2 Second Timer')
-}, 2000)
+const url =
+  'https://api.darksky.net/forecast/1c6718a83ce0b425d1f779d8e406db74/37.8267,-122.4233?units=si&lang=es'
 
-setTimeout(() => {
-  console.log('0 Second Timer')
-}, 0)
+request({ url: url, json: true }, (error, response) => {
+  // console.log(response.body.currently)
+  console.log(
+    response.body.daily.data[0].summary +
+      ' It is currently ' +
+      response.body.currently.temperature +
+      ' degrees out there is a ' +
+      response.body.currently.precipProbability +
+      '% chance of rain'
+  )
+})
 
-console.log('Stopping')
+const geocodeURL =
+  'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoiYmVybmFyZG9ydWJpbiIsImEiOiJjanQzcDZpcXkwdGNtNGFwYzFsY2V4NnBhIn0.RNGuEJDUebMgSd1d0T_1UQ&limit=1'
+
+request({ url: geocodeURL, json: true }, (error, response) => {
+  const longitude = response.body.features[0].center[0]
+  const latitude = response.body.features[0].center[1]
+  console.log(latitude, longitude)
+})
