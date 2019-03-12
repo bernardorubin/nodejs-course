@@ -1,0 +1,15 @@
+Node is a way of running javascript code on the server as opposed to being forced to run it on the client
+
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine
+Uses an event-driven, non-blocking I/O model
+
+V8 is written in C++
+
+job of javascript engine is to take in js code and complie it down to machine code that machine can actually execute
+
+Asynchronous Node.js
+Call Stack -> NodeAPIs
+                |
+                V
+Event Loop
+        Callback Queue
