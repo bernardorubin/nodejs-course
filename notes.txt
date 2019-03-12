@@ -24,3 +24,5 @@ You can serve a static website or create a complex Http json based api to serve 
 
 A callback is a function we provide to another function as an argument with the intention of having it called later on
 forEach and filter use callback pattern but are not asynchronous
+
+Handlebars -> allows for rendering dynamic content -> we're able to set up templates which are similar to html documents but we can inject specific values inside
