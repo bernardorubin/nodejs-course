@@ -13,12 +13,15 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-  res.send('About page')
+  res.send('<h1>About</h1>')
 })
 
 app.get('/weather', (req, res) => {
   console.log(req)
-  res.send('Weather page')
+  res.send({
+    forecast: 'something',
+    location: 'something'
+  })
 })
 
 app.listen(3000, () => {
