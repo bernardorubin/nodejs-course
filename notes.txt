@@ -20,3 +20,7 @@ instead of needing to run commands from the terminal to interact with your app
 
 We can serve a website or we could serve up an http json based api
 You can serve a static website or create a complex Http json based api to serve as the backend for something like a mobile or web application
+
+
+A callback is a function we provide to another function as an argument with the intention of having it called later on
+forEach and filter use callback pattern but are not asynchronous
