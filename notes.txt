@@ -13,3 +13,10 @@ Call Stack -> NodeAPIs
                 V
 Event Loop
         Callback Queue
+
+
+Creating a server offers users a different way to interact with your applications
+instead of needing to run commands from the terminal to interact with your app
+
+We can serve a website or we could serve up an http json based api
+You can serve a static website or create a complex Http json based api to serve as the backend for something like a mobile or web application
