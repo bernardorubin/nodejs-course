@@ -11,19 +11,30 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath))
 
-// app.get('', (req, res) => {
-//   res.send('<h1>Weather</h1>')
-// })
+app.get('', (req, res) => {
+  // res.send('<h1>Weather</h1>')
+  res.render('index', {
+    name: 'Bern',
+    title: 'Weather app'
+  })
+})
 
-// app.get('/help', (req, res) => {
-//   // express automatically detects we are sending an object
-//   // and automatically parses it and converts it to JSON
-//   res.send([{ name: 'Andrew', age: 27 }, { name: 'Bern', age: 29 }])
-// })
+app.get('/about', (req, res) => {
+  // res.send('<h1>About</h1>')
+  res.render('about', {
+    title: 'about',
+    name: 'bernuli'
+  })
+})
 
-// app.get('/about', (req, res) => {
-//   res.send('<h1>About</h1>')
-// })
+app.get('/help', (req, res) => {
+  // // express automatically detects we are sending an object
+  // // and automatically parses it and converts it to JSON
+  // res.send([{ name: 'Andrew', age: 27 }, { name: 'Bern', age: 29 }])
+  res.render('help', {
+    message: 'help me please'
+  })
+})
 
 app.get('/weather', (req, res) => {
   console.log(req)
