@@ -3,11 +3,13 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('Hello from express')
+  res.send('<h1>Weather</h1>')
 })
 
 app.get('/help', (req, res) => {
-  res.send('Help page')
+  // express automatically detects we are sending an object
+  // and automatically parses it and converts it to JSON
+  res.send([{ name: 'Andrew', age: 27 }, { name: 'Bern', age: 29 }])
 })
 
 app.get('/about', (req, res) => {
