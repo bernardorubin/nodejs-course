@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
+// nodemon src/app.js -e js,hbss
 console.log(__dirname)
 console.log(__filename)
 console.log(path.join(__dirname, '../public'))
