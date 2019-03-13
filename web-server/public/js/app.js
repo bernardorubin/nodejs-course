@@ -4,10 +4,23 @@ console.log('Client side javascript file loaded!')
 // we can use it in all modern browsers but not accessible
 // in nodejs. can't be used on a backend node script
 
-fetch('http://localhost:3000/weather?address=boston').then(response => {
-  response.json().then(data => {
-    data.error
-      ? console.log(data.error)
-      : console.log(data.forecast, data.location)
+const fetchData = address => {
+  fetch('http://localhost:3000/weather?address=' + address).then(response => {
+    response.json().then(data => {
+      data.error
+        ? console.log(data.error)
+        : console.log(data.forecast, data.location)
+    })
   })
+}
+
+const weatherForm = document.querySelector('form')
+
+const search = document.querySelector('input')
+
+weatherForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const location = search.value
+  fetchData(location)
+  console.log(location)
 })
