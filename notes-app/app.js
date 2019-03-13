@@ -4,7 +4,7 @@ const notes = require('./notes.js')
 // Customize yargs version
 yargs.version('1.1.0')
 
-// I function is a method, use ES6 Method definition syntax
+// If function is a method, use ES6 Method definition syntax
 // Otherwise use arrow function
 // It becomes an arrow function if it isn't being defined directly on an object
 // Methods are defined directluy on an object
