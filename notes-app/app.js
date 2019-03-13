@@ -7,7 +7,7 @@ yargs.version('1.1.0')
 // If function is a method, use ES6 Method definition syntax
 // Otherwise use arrow function
 // It becomes an arrow function if it isn't being defined directly on an object
-// Methods are defined directluy on an object
+// Methods are defined directly on an object
 // Definining function directly on an object:
 // handler: function(argv) {
 //   notes.addNote(argv.title, argv.body)
