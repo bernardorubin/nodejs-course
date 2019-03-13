@@ -4,7 +4,6 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-// nodemon src/app.js -e js,hbss
 console.log(__dirname)
 console.log(__filename)
 console.log(path.join(__dirname, '../public'))
