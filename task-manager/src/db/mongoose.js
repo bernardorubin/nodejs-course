@@ -36,12 +36,27 @@ const User = mongoose.model('User', {
         throw new Error('Age must be a positive number')
       }
     }
+  },
+  password: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 7,
+    validate(value) {
+      // if (value.length <= 6) {
+      //   throw new Error('Password length must be greater than 6')
+      // }
+      if (value.toLowerCase().includes('password')) {
+        throw new Error('Password cant contain password')
+      }
+    }
   }
 })
 // Create an instance
 const me = new User({
   name: '      Bern         ',
-  email: 'MYEMAIL@GMAIL.com    '
+  email: 'MYEMAIL@GMAIL.com    ',
+  password: 'pasasiewl9'
 })
 // Save to db
 me.save()
