@@ -34,10 +34,10 @@
 //   }
 // }
 
-// ES6 function for defining methods on objects definition with this binding
 const event = {
   name: 'Birthday Party',
   guestList: ['John', 'Jen', 'Mike'],
+  // ES6 function for defining methods on objects definition with this binding
   printGuestList() {
     console.log('Guest list for ' + this.name)
     // this.guestList.forEach(function(guest) {
