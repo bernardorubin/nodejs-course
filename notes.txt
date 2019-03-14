@@ -34,3 +34,21 @@ Methods are defined directly on an object
 
 Data validation -> allow only ages greater than 18
 Data sanitization -> Alter data before saving it -> Remove empty spaces around user's name
+
+REST API
+Representational State Transfer - Application Programming Interface
+
+API -> Set of tools that allow to build software applications (very broad term)
+Node provides us with APIs such as fs
+NPM modules like express provide us with APIs
+
+REST -> Predefined operations that will allow a client to go through the process of creating a frontend or a task manager
+Representational -> Representations of our data
+State -> Stateless -> Each request from the client contains all info needed for the server to process the request -> operation we're trying to perform, all data the operation actually needs in order to work, also includes authentication
+Works via http requests
+Predefined Operations -> CRUD
+Expose Necessary set of predefined operations
+Create Read Update Delete
+
+Every REST operation is defined by two pieces of data
+All requests include the HTTP method and the path
