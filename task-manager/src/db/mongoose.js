@@ -17,13 +17,32 @@ const User = mongoose.model('User', {
     type: Number
   }
 })
-// Create an instance
-const me = new User({
-  name: 'Bern',
-  age: 29
+// // Create an instance
+// const me = new User({
+//   name: 'Bern',
+//   age: 29
+// })
+// // Save to db
+// me.save()
+//   .then(result => {
+//     console.log(result)
+//   })
+//   .catch(error => {
+//     console.log(error)
+//   })
+
+const Task = mongoose.model('Task', {
+  description: { type: String },
+  completed: { type: Boolean }
 })
-// Save to db
-me.save()
+
+const newTask = new Task({
+  description: 'Wash clothes',
+  completed: false
+})
+
+newTask
+  .save()
   .then(result => {
     console.log(result)
   })
