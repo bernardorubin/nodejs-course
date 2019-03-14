@@ -52,20 +52,20 @@ const User = mongoose.model('User', {
     }
   }
 })
-// // Create an instance
-// const me = new User({
-//   name: '      Bern         ',
-//   email: 'MYEMAIL@GMAIL.com    ',
-//   password: 'pasasiewl9'
-// })
-// // Save to db
-// me.save()
-//   .then(result => {
-//     console.log(result)
-//   })
-//   .catch(error => {
-//     console.log('Error!', error)
-//   })
+// Create an instance
+const me = new User({
+  name: '      Bern         ',
+  email: 'MYEMAIL@GMAIL.com    ',
+  password: 'pasasiewl9'
+})
+// Save to db
+me.save()
+  .then(result => {
+    console.log(result)
+  })
+  .catch(error => {
+    console.log('Error!', error)
+  })
 
 const Task = mongoose.model('Task', {
   description: { type: String, required: true, trim: true },
