@@ -50,5 +50,15 @@ Predefined Operations -> CRUD
 Expose Necessary set of predefined operations
 Create Read Update Delete
 
-Every REST operation is defined by two pieces of data
+Every REST operatsion is defined by two pieces of data
 All requests include the HTTP method and the path
+HTTP methods -> 
+        Create ->       POST /tasks
+        Read ->         GET /tasks
+        Read ->         GET /tasks/:id
+        Update ->       PATCH /tasks/:id
+        Delete ->       DELETE /tasks/:id
+
+Request - Response
+
+POSTMAN allows us to test an api without having to build a client
