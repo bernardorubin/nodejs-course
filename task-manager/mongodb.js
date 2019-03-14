@@ -25,24 +25,45 @@ MongoClient.connect(
       return console.log('Unable to connect to database')
     }
     const db = client.db(databaseName)
-
+    // DELETE
     db.collection('tasks')
-      .updateMany(
-        {
-          completed: false
-        },
-        {
-          $set: {
-            completed: true
-          }
-        }
-      )
+      .deleteOne({
+        description: 'Task Description'
+      })
       .then(result => {
-        console.log(result.modifiedCount)
+        console.log(result)
       })
-      .catch(error => {
-        console.log(error)
-      })
+      .catch(error => console.log(error))
+
+    // db.collection('users')
+    //   .deleteMany({
+    //     age: 27
+    //   })
+    //   .then(result => {
+    //     console.log(result)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
+
+    // UPDATE
+    // db.collection('tasks')
+    //   .updateMany(
+    //     {
+    //       completed: false
+    //     },
+    //     {
+    //       $set: {
+    //         completed: true
+    //       }
+    //     }
+    //   )
+    //   .then(result => {
+    //     console.log(result.modifiedCount)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
 
     // const updatePromise = db.collection('tasks').updateOne(
     //   {
@@ -77,6 +98,7 @@ MongoClient.connect(
     //   }
     // )
 
+    // READ
     // // toArray actually goes into the server and fetches the array
     // // find only returns a pointer to which we can perform functions
     // db.collection('tasks')
@@ -115,6 +137,7 @@ MongoClient.connect(
     //     console.log(count)
     //   })
 
+    // CREATE
     // db.collection('users').insertOne(
     //   {
     //     _id: id,
