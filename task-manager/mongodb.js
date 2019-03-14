@@ -26,6 +26,45 @@ MongoClient.connect(
     }
     const db = client.db(databaseName)
 
+    db.collection('tasks')
+      .updateMany(
+        {
+          completed: false
+        },
+        {
+          $set: {
+            completed: true
+          }
+        }
+      )
+      .then(result => {
+        console.log(result.modifiedCount)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+    // const updatePromise = db.collection('tasks').updateOne(
+    //   {
+    //     _id: new ObjectID('5c895a748313b60d57f8b286')
+    //   },
+    //   // {
+    //   //   $set: { name: 'Burnubii' }
+    //   // }
+    //   {
+    //     $inc: { age: -1 }
+    //   }
+    // )
+    // updatePromise
+    //   .then(result => {
+    //     console.log(result)
+    //     // modifiedCount equals 0 when nothing was updated
+    //     console.log(result.modifiedCount)
+    //   })
+    //   .catch(error => {
+    //     console.log(error)
+    //   })
+
     // db.collection('tasks').findOne(
     //   {
     //     _id: new ObjectID('5c895a748313b60d57f8b286')
@@ -38,13 +77,13 @@ MongoClient.connect(
     //   }
     // )
 
-    // toArray actually goes into the server and fetches the array
-    // find only returns a pointer to which we can perform functions
-    db.collection('tasks')
-      .find({ completed: false })
-      .toArray((error, tasks) => {
-        console.log(tasks)
-      })
+    // // toArray actually goes into the server and fetches the array
+    // // find only returns a pointer to which we can perform functions
+    // db.collection('tasks')
+    //   .find({ completed: false })
+    //   .toArray((error, tasks) => {
+    //     console.log(tasks)
+    //   })
 
     // db.collection('users').findOne(
     //   { _id: new ObjectID('5c88a842c8a5e80abe290310') },
