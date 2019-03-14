@@ -29,3 +29,8 @@ Handlebars -> allows for rendering dynamic content -> we're able to set up templ
 
 -------------------
 Methods are defined directly on an object
+
+
+
+Data validation -> allow only ages greater than 18
+Data sanitization -> Alter data before saving it -> Remove empty spaces around user's name
