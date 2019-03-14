@@ -52,39 +52,38 @@ const User = mongoose.model('User', {
     }
   }
 })
-// Create an instance
-const me = new User({
-  name: '      Bern         ',
-  email: 'MYEMAIL@GMAIL.com    ',
-  password: 'pasasiewl9'
-})
-// Save to db
-me.save()
-  .then(result => {
-    console.log(result)
-  })
-  .catch(error => {
-    console.log('Error!', error)
-  })
-
-const Task = mongoose.model('Task', {
-  description: { type: String, required: true },
-  completed: { type: Boolean }
-})
-
-// const newTask = new Task({
-//   description: 'Wash clothes',
-//   completed: false
+// // Create an instance
+// const me = new User({
+//   name: '      Bern         ',
+//   email: 'MYEMAIL@GMAIL.com    ',
+//   password: 'pasasiewl9'
 // })
-
-// newTask
-//   .save()
+// // Save to db
+// me.save()
 //   .then(result => {
 //     console.log(result)
 //   })
 //   .catch(error => {
-//     console.log(error)
+//     console.log('Error!', error)
 //   })
+
+const Task = mongoose.model('Task', {
+  description: { type: String, required: true, trim: true },
+  completed: { type: Boolean, default: false }
+})
+
+const newTask = new Task({
+  description: 'Eat Lunch'
+})
+
+newTask
+  .save()
+  .then(result => {
+    console.log(result)
+  })
+  .catch(error => {
+    console.log(error)
+  })
 
 // Data validation -> allow only ages greater than 18
 // Data sanitization -> Alter data before saving it -> Remove empty spaces around user's name
