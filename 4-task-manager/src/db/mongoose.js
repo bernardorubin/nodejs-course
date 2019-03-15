@@ -6,7 +6,8 @@ const mongoose = require('mongoose')
 // Allows you to map your objects in the node app over to documents inside Mongo DB
 mongoose.connect('mongodb://127.0.0.1:27017/task-manager-api', {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useFindAndModify: false
 })
 
 // // Define first Model (user)
