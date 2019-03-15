@@ -26,6 +26,32 @@ app.post('/users', (req, res) => {
     })
 })
 
+app.get('/users', (req, res) => {
+  // Fetch all users via promise that find returns
+  User.find({})
+    .then(users => {
+      res.status(200).send(users)
+    })
+    .catch(error => {
+      res.status(500).send()
+    })
+})
+
+app.get('/users/:id', (req, res) => {
+  const _id = req.params.id
+  // Mongoose automatically converts the ID so that we don't have to convert it for mongo
+  User.findById(_id)
+    .then(user => {
+      if (!user) {
+        return res.status(404).send()
+      }
+      res.status(200).send(user)
+    })
+    .catch(error => {
+      res.status(500).send(error)
+    })
+})
+
 app.post('/tasks', (req, res) => {
   const task = new Task(req.body)
   task
