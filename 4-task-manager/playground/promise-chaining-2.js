@@ -10,7 +10,8 @@ Task.findByIdAndDelete('5c89f7b43458e027a4e65e30')
   .catch(e => console.log(e))
 
 const deleteTaskAndCount = async id => {
-  const task = await Task.findByIdAndDelete(id)
+  await Task.findByIdAndDelete(id)
+  // const task = await Task.findByIdAndDelete(id)
   const count = await Task.countDocuments({ completed: false })
   return count
 }
