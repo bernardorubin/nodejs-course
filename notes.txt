@@ -62,3 +62,10 @@ HTTP methods ->
 Request - Response
 
 POSTMAN allows us to test an api without having to build a client
+
+
+Async await
+You can handle individual errors from individual promises using a try catch statement
+await something
+If the promise above is fulfilled the code below it runs. If it is rejected the rest of the function will stop
+To avoid erros crashing your hole function use try catch
