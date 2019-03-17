@@ -69,3 +69,10 @@ You can handle individual errors from individual promises using a try catch stat
 await something
 If the promise above is fulfilled the code below it runs. If it is rejected the rest of the function will stop
 To avoid erros crashing your hole function use try catch
+
+Hashing
+With Encryption I can get the original value back
+with encryption algorithm I can turned the random string into the original value
+
+Hashing algorithms are one way only, we cannot reverse the process
+Hashing algorithms are not reversible by design
