@@ -76,3 +76,5 @@ with encryption algorithm I can turned the random string into the original value
 
 Hashing algorithms are one way only, we cannot reverse the process
 Hashing algorithms are not reversible by design
+
+Arrow functions don't bind this
