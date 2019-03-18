@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-// Define first Model (user)
-const User = mongoose.model('User', {
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -44,5 +43,16 @@ const User = mongoose.model('User', {
     }
   }
 })
+
+// Add middleware for encryption
+userSchema.pre('save', async function(next) {
+  // we don't use arrow function because it doesn't bind to this
+  const user = this
+  console.log('just before saving!')
+  next()
+})
+
+// Define first Model (user)
+const User = mongoose.model('User', userSchema)
 
 module.exports = User

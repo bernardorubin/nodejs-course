@@ -80,10 +80,20 @@ router.patch('/users/:id', async (req, res) => {
   }
 
   try {
-    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
+    // To use mongoose middleware we have to change this
+    // findByIdAndUpdate bypassses mongoose and performs a direct operation on the db
+
+    const user = await User.findById(req.params.id)
+
+    updates.forEach(update => {
+      // Bracket notation to access a property dinamically
+      user[update] = req.body[update]
     })
+    await user.save()
+    // const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    //   new: true,
+    //   runValidators: true
+    // })
 
     if (!user) {
       return res.status(404).send()
