@@ -78,3 +78,7 @@ Hashing algorithms are one way only, we cannot reverse the process
 Hashing algorithms are not reversible by design
 
 Arrow functions don't bind this
+
+-------------------------
+// without middleware: new request -> run route handler
+// with middleware: new request -> do something -> run route handler
