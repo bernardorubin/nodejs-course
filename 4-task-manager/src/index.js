@@ -20,9 +20,9 @@ const port = process.env.PORT || 3000 // Get PORT value for heroku deployment fr
 //     }
 // })
 
-app.use((req, res, next) => {
-  res.status(503).send('Site is currently down. Check back soon!')
-})
+// app.use((req, res, next) => {
+//   res.status(503).send('Site is currently down. Check back soon!')
+// })
 
 // without middleware: new request -> run route handler
 // with middleware: new request -> do something -> run route handler
