@@ -36,6 +36,29 @@ router.post('/users/login', async (req, res) => {
   }
 })
 
+router.post('/users/logout', auth, async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter(token => {
+      //return true when the  that we are looking at isn't the one that was used for authentication
+      return token.token !== req.token // if not true we keep it in the tokens array // if returns false it will filter it out and remove it
+    })
+    await req.user.save()
+    res.send()
+  } catch (e) {
+    res.status(500).send()
+  }
+})
+
+router.post('/users/logoutAll', auth, async (req, res) => {
+  try {
+    req.user.tokens = []
+    await req.user.save()
+    res.send()
+  } catch (e) {
+    res.status(500).send()
+  }
+})
+
 router.post('/users/login', async (req, res) => {
   try {
     const user = await User.findByCredentials(req.body.email, req.body.password)

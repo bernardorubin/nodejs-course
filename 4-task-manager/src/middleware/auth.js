@@ -15,6 +15,7 @@ const auth = async (req, res, next) => {
     // add a property onto request storing the user as a new object property
     // no need for route handler to refetch the user
     req.user = user
+    req.token = token // route handlers can now access the token
     next()
   } catch (e) {
     res.status(401).send({ error: 'Please authenticate.' })
