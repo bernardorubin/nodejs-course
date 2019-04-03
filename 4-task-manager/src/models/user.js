@@ -65,6 +65,17 @@ userSchema.methods.generateAuthToken = async function() {
   return token
 }
 
+// for the user instance
+userSchema.methods.toJSON = function() {
+  const user = this
+  const userObject = user.toObject()
+
+  delete userObject.password
+  delete userObject.tokens
+
+  return userObject
+}
+
 // Static methods are model methods
 // Created our own custom function on the schema
 userSchema.statics.findByCredentials = async (email, password) => {
@@ -83,6 +94,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user
 }
 
+// for the User model
 userSchema.statics.findByCredentials = async (email, password) => {
   const user = await User.findOne({ email })
 
