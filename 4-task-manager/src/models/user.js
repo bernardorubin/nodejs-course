@@ -68,7 +68,7 @@ userSchema.methods.generateAuthToken = async function() {
 // for the user instance
 userSchema.methods.toJSON = function() {
   const user = this
-  const userObject = user.toObject()
+  const userObject = user.toObject() // we remove mongoose operation stuff we get only user object data
 
   delete userObject.password
   delete userObject.tokens
