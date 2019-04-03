@@ -67,6 +67,8 @@ userSchema.methods.generateAuthToken = async function() {
 
 // for the user instance
 userSchema.methods.toJSON = function() {
+  // When we send response object express calss JSON.stringify behind the scenes
+  // in this method we customize it to return info without passing private data
   const user = this
   const userObject = user.toObject() // we remove mongoose operation stuff we get only user object data
 
